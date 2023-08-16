@@ -1,11 +1,11 @@
 ## Prism: Revealing Hidden Functional Clusters from Massive Instances in Cloud Systems
 
-This is the repository of **Prism** for the paper "Jinyang Liu, Zhihan Jiang, Jiazhen Gu, Junjie Huang, Zhuangbin Chen, Cong Feng, Zengyin Yang, Yongqiang Yang, Michael R. Lyu. [Prism: Revealing Hidden Functional Clusters of Massive Instances in Cloud Systems](todo)" accepted by ASE 2023.
+This is the repository of **Prism** for the paper "Jinyang Liu, Zhihan Jiang, Jiazhen Gu, Junjie Huang, Zhuangbin Chen, Cong Feng, Zengyin Yang, Yongqiang Yang, Michael R. Lyu. [Prism: Revealing Hidden Functional Clusters of Massive Instances in Cloud Systems](https://arxiv.org/pdf/2308.07638.pdf)" accepted by ASE 2023.
 
 In this paper, we propose **Prism**, a non-intrusive, effective and efficient solution that infers functional clusters of instances from the communication and resource usage patterns in large-scale cloud systems. 
 
 
-![Overall Framework of Prism](./docs/method_framework.png)
+![Overall framework of Prism](./docs/method_framework.png)
 
 ### Repository Organization 
 
@@ -53,13 +53,13 @@ python trace_partitioning.py
 ```bash
 cd src
 python metric_clustering.py
-```
+```r
 
 ​		Then, the result of metric-based clustering will be saved to the corresponding subdir of ```outdir/```.
 
 ### Dataset
 
-The communication trace data and resource usage data utilized in this study were gathered from a prominent real-world cloud vendor. As this information is highly sensitive and contains significant amounts of personally identifiable information (PII), we are obligated to uphold our customers' privacy. Thus, we have opted not to publish the original dataset. Nonetheless, to ensure that our work can provide value to the community, we released **Prism**'s source code with a portion of *anonymized data*.
+The communication trace data and resource usage data utilized in this study were gathered from Huawei Cloud. As this information is highly sensitive and contains significant amounts of personally identifiable information (PII), we are obligated to uphold our customers' privacy. Thus, we have opted not to publish the original dataset. Nonetheless, to ensure that our work can provide value to the community, we released **Prism**'s source code with a portion of *anonymized data*.
 
 Specifically, we have anonymized, cleaned, and released relevant data for 1019 instances. Furthermore, we plan to release more data after the review process.
 
