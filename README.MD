@@ -53,7 +53,7 @@ python trace_partitioning.py
 ```bash
 cd src
 python metric_clustering.py
-```r
+```
 
 ​		Then, the result of metric-based clustering will be saved to the corresponding subdir of ```outdir/```.
 
