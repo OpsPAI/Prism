@@ -177,7 +177,7 @@ class Clustering:
         # dist_argmin = dist_tensor.argmin(axis=0)
         return dist_merged
 
-    def __compute_distance_matrix(self, metric_matrix_dict):
+    def __compute_distance_matrix(self, metric_matrix_dict, option=False):
         print("Computing distance matrix..")
         if os.path.isfile(self.cache_path):
             print(f"Loading from {self.cache_path}")
@@ -197,11 +197,14 @@ class Clustering:
                         metric_matrix_metric = (
                             MinMaxScaler().fit_transform(metric_matrix_metric.T).T
                         )
-                    weighted_matrix = None
-                    if weighted_matrix is not None:
-                        weights = np.zeros((len, len))
-                        for i in range(len):
-                            for j in range(len):
+                    L = len(metric_matrix_metric)
+                    row_variances = []
+                    for i in range(L):
+                        row_variances.append(np.std(metric_matrix_metric[i]))
+                    if option:
+                        weights = np.zeros((L, L))
+                        for i in range(L):
+                            for j in range(L):
                                 weights[i, j] = max(row_variances[i], row_variances[j])
                         distance_matrix = self.dist_func(metric_matrix_metric)
                         distance_matrix = np.multiply(distance_matrix, weights)
